@@ -1,23 +1,51 @@
-import { isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Component, Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
+import { HomeComponent } from "./pages/home/home.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule, FormsModule, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'CrimePredictionAlertSystem.Frontend';
+  active: any = '#home';
+  currentRoute: any;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.currentRoute = true;
+  }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      window.addEventListener('scroll', this.windowScroll, true);
       initFlowbite();
     }
+    
+  }
+
+  windowScroll() {
+    const navbar = document.getElementById("navbar");
+    if (navbar != null) {
+      if (
+        document.body.scrollTop >= 50 ||
+        document.documentElement.scrollTop >= 50
+      ) {
+        navbar.classList.add("is-sticky");
+      } else {
+        navbar.classList.remove("is-sticky");
+      }
+    }
+  }
+
+  ScrollIntoView(elem: string) {
+    this.active = elem;
+    let ele = document.querySelector(elem) as any;
+    ele.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
