@@ -4,11 +4,15 @@ import { Component, Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { HomeComponent } from "./pages/home/home.component";
+import { ReportIncidentComponent } from './pages/report-incident/report-incident.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AlertsComponent } from './pages/alerts/alerts.component';
+import { CrimeMapComponent } from './pages/crime-map/crime-map.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, HomeComponent],
+  imports: [RouterOutlet, CommonModule, FormsModule, HomeComponent, ReportIncidentComponent, NavbarComponent, AlertsComponent, CrimeMapComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
