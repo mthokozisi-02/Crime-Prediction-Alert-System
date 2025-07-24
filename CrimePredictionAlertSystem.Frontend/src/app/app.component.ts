@@ -8,11 +8,12 @@ import { ReportIncidentComponent } from './pages/report-incident/report-incident
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AlertsComponent } from './pages/alerts/alerts.component';
 import { CrimeMapComponent } from './pages/crime-map/crime-map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, HomeComponent, ReportIncidentComponent, NavbarComponent, AlertsComponent, CrimeMapComponent],
+  imports: [CommonModule, FormsModule, HomeComponent, ReportIncidentComponent, NavbarComponent, AlertsComponent, CrimeMapComponent,GoogleMapsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
