@@ -8,16 +8,9 @@
             height="500px"
             width="100%"
             [center]="center"
-            [zoom]="12"
+            [zoom]="15"
+            [mapId]="'4d4d3badd596bb40ec9ef0a6'"
             (mapInitialized)="onMapReady($event)">
-
-            <!-- 👇 Marker for user's location -->
-            <map-marker
-                *ngIf="userMarker as marker"
-                [position]="marker"
-                [label]="'You'"
-                [title]="'Your Location'">
-            </map-marker>
         </google-map>
     </div>
 </section>

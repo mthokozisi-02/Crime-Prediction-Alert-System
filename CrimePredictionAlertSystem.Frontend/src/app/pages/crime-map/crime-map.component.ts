@@ -10,35 +10,33 @@ import { GoogleMapsModule } from '@angular/google-maps';
   styleUrl: './crime-map.component.css'
 })
 export class CrimeMapComponent {
-  center: google.maps.LatLngLiteral = { lat: -17.8292, lng: 31.0522 }; // default fallback
+  center: google.maps.LatLngLiteral = { lat: -17.8292, lng: 31.0522 };
+  watchId: number | null = null; // store watch ID so you can stop it later
   zoom = 13;
 
-  userMarker: google.maps.LatLngLiteral | null = null; // 👈 Marker position
   heatmap: google.maps.visualization.HeatmapLayer | undefined;
   mapInstance: google.maps.Map | undefined;
-  currentRoute: any;
+  userMarkerElement: google.maps.marker.AdvancedMarkerElement | undefined;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private cdr: ChangeDetectorRef
-  ) {
-    this.currentRoute = true;
-  }
+  ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.setUserLocation(); // move this up BEFORE heatmap radius/opacity
+      this.setUserLocation();
     }
   }
 
   onMapReady(map: google.maps.Map) {
     this.mapInstance = map;
 
+    // Initialize heatmap
     const heatmapData = [
       new google.maps.LatLng(-20.181369, 28.6045371),
       new google.maps.LatLng(-17.8321, 31.0600),
       new google.maps.LatLng(-17.8300, 31.0550)
-      // Replace with actual reports
     ];
 
     this.heatmap = new google.maps.visualization.HeatmapLayer({
@@ -46,29 +44,60 @@ export class CrimeMapComponent {
       map: map
     });
 
-    // Apply heatmap options
     this.heatmap.set('radius', 30);
     this.heatmap.set('opacity', 0.6);
   }
 
-  setUserLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        position => {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-          console.log('position:',position.coords.accuracy)
+ setUserLocation() {
+  if (navigator.geolocation) {
+    this.watchId = navigator.geolocation.watchPosition(
+      position => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
 
-          this.center = { lat, lng };
-          this.userMarker = { lat, lng }; // 👈 Save marker location
-          this.cdr.detectChanges();
-        },
-        error => {
-          console.warn('Geolocation not available or denied. Using default location.', error);
+        this.center = { lat, lng };
+
+        if (this.mapInstance && google.maps.marker) {
+          const { AdvancedMarkerElement } = google.maps.marker;
+
+          if (!this.userMarkerElement) {
+            // First time: create the marker
+            const customDiv = document.createElement('div');
+            customDiv.innerHTML = `
+              <div style="
+                width: 20px;
+                height: 20px;
+                background-color: #3b82f6;
+                border-radius: 50%;
+                box-shadow: 0 0 8px rgba(0,0,0,0.3);
+              "></div>
+            `;
+
+            this.userMarkerElement = new AdvancedMarkerElement({
+              map: this.mapInstance,
+              position: { lat, lng },
+              title: 'Your Location',
+            });
+          } else {
+            // Update position if marker already exists
+            this.userMarkerElement.position = { lat, lng };
+          }
         }
-      );
-    } else {
-      console.warn('Geolocation is not supported by this browser.');
-    }
+
+        this.cdr.detectChanges();
+      },
+      error => {
+        console.warn('Geolocation watch error:', error);
+      },
+      {
+        enableHighAccuracy: true,
+        maximumAge: 5000,
+        timeout: 10000
+      }
+    );
+  } else {
+    console.warn('Geolocation is not supported by this browser.');
   }
+}
+
 }
