@@ -3,14 +3,13 @@ import { Component, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core
 import { GoogleMapsModule, GoogleMap } from '@angular/google-maps';
 
 @Component({
-  selector: 'app-crime-map',
-  standalone: true,
-  imports: [
-    CommonModule,
-    GoogleMap
-],
-  templateUrl: './crime-map.component.html',
-  styleUrls: ['./crime-map.component.css']
+    selector: 'app-crime-map',
+    imports: [
+        CommonModule,
+        GoogleMap
+    ],
+    templateUrl: './crime-map.component.html',
+    styleUrls: ['./crime-map.component.css']
 })
 export class CrimeMapComponent {
   map!: google.maps.Map;
