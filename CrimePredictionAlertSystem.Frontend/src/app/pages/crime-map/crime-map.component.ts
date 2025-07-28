@@ -23,11 +23,9 @@ L.Icon.Default.mergeOptions({
 })
 export class CrimeMapComponent {
 
-  center: L.LatLngExpression = [-17.8292, 31.0522];
   private map!: L.Map;
   private heatLayer!: L.Layer;
   private watchId: number | null = null;
-  private defaultCenter: L.LatLngExpression = [-17.8292, 31.0522];
   zoom = 13;
 
   constructor(
@@ -35,45 +33,46 @@ export class CrimeMapComponent {
     private cdr: ChangeDetectorRef
   ) {}
 
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      navigator.geolocation.getCurrentPosition(
+ngAfterViewInit(): void {
+  if (isPlatformBrowser(this.platformId)) {
+    navigator.geolocation.getCurrentPosition(
       (position) => {
         const center: L.LatLngExpression = [position.coords.latitude, position.coords.longitude];
-          this.initMap(center);
-          this.cdr.detectChanges();
-          this.watchUserLocation();
+        this.initMap(center);
+        this.watchUserLocation();
       },
       (error) => {
-        console.warn('Geolocation error. Falling back to default location.', error);
-        this.initMap(this.defaultCenter);
-      }
-      );
-    }
-  }
+        console.warn('Geolocation error. Cannot determine current location.', error);
 
-   initMap(center: L.LatLngExpression) {
+        // Optional fallback (e.g., center of city or world)
+        const fallback: L.LatLngExpression = [0, 0]; // You could use any meaningful default here
+        this.initMap(fallback);
+      }
+    );
+  }
+}
+
+
+  initMap(center: L.LatLngExpression) {
     this.map = L.map('map-container').setView(center, 15);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(this.map);
 
+    const [lat, lng] = center as [number, number];
+
     const heatData: [number, number, number?][] = [
-      [-17.8292, 31.0522, 10.0], // higher weights
-      [-17.8321, 31.0600, 8.0],
-      [-17.8300, 31.0550, 15.0]
+      [lat, lng, 10.0],
+      [lat + 0.002, lng + 0.002, 8.0],
+      [lat - 0.002, lng - 0.002, 15.0]
     ];
 
-    (L as any).heatLayer(heatData, {
+    this.heatLayer = (L as any).heatLayer(heatData, {
       radius: 40,
       blur: 15,
       maxZoom: 17
     }).addTo(this.map);
-
-    setTimeout(() => {
-    this.map.invalidateSize(); // <-- key fix
-  }, 100);
   }
 
 watchUserLocation() {
@@ -86,7 +85,8 @@ watchUserLocation() {
           title: 'Your Location'
         }).addTo(this.map);
 
-        this.map.setView([lat, lng]);
+        marker.bindPopup('You are here').openPopup();
+
       });
     }
   }
