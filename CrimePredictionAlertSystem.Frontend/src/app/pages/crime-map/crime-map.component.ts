@@ -1,20 +1,24 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
-import { GoogleMapsModule } from '@angular/google-maps';
+import { GoogleMapsModule, GoogleMap } from '@angular/google-maps';
 
 @Component({
   selector: 'app-crime-map',
   standalone: true,
-  imports: [GoogleMapsModule, CommonModule],
+  imports: [
+    CommonModule,
+    GoogleMap
+],
   templateUrl: './crime-map.component.html',
-  styleUrl: './crime-map.component.css'
+  styleUrls: ['./crime-map.component.css']
 })
 export class CrimeMapComponent {
+  map!: google.maps.Map;
+
   center: google.maps.LatLngLiteral = { lat: -17.8292, lng: 31.0522 };
   watchId: number | null = null; // store watch ID so you can stop it later
   zoom = 13;
 
-  heatmap: google.maps.visualization.HeatmapLayer | undefined;
   mapInstance: google.maps.Map | undefined;
   userMarkerElement: google.maps.marker.AdvancedMarkerElement | undefined;
 
@@ -24,31 +28,62 @@ export class CrimeMapComponent {
   ) {}
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.setUserLocation();
-    }
+      navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.center = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        this.loadMap(); // Load map only when location is ready
+        this.watchUserLocation(); // Start watching position after map is loaded
+      },
+      (error) => {
+        console.warn('Geolocation error. Falling back to default location.', error);
+        this.loadMap(); // Still load map with default center
+      }
+    );
   }
 
-  onMapReady(map: google.maps.Map) {
-    this.mapInstance = map;
-
-    // Initialize heatmap
-    const heatmapData = [
-      new google.maps.LatLng(-20.181369, 28.6045371),
-      new google.maps.LatLng(-17.8321, 31.0600),
-      new google.maps.LatLng(-17.8300, 31.0550)
-    ];
-
-    this.heatmap = new google.maps.visualization.HeatmapLayer({
-      data: heatmapData,
-      map: map
+  loadMap() {
+    const map = new google.maps.Map(document.getElementById('map-container') as HTMLElement, {
+      center: this.center,
+      zoom: 18,
+      mapId: '4d4d3badd596bb40ec9ef0a6'
     });
 
-    this.heatmap.set('radius', 30);
-    this.heatmap.set('opacity', 0.6);
+    this.map = map;
+    this.mapInstance = map;
+
+    this.loadHeatmapLayer(map);
   }
 
- setUserLocation() {
+async loadHeatmapLayer(map: google.maps.Map) {
+
+    const { GoogleMapsOverlay } = await import('@deck.gl/google-maps');
+    const { HeatmapLayer } = await import('@deck.gl/aggregation-layers');
+
+
+  const overlay = new GoogleMapsOverlay({
+    layers: [
+      new HeatmapLayer({
+        id: 'crime-heatmap',
+        data: [
+          { position: [-17.8292, 31.0522], weight: 1 },
+          { position: [-17.8321, 31.0600], weight: 0.5 },
+          { position: [-17.8300, 31.0550], weight: 1.2 }
+        ],
+        getPosition: d => [d.position[1], d.position[0]], // [lng, lat]
+        getWeight: d => d.weight,
+        radiusPixels: 60
+      })
+    ]
+  });
+
+  overlay.setMap(map);
+}
+
+
+ watchUserLocation() {
   if (navigator.geolocation) {
     this.watchId = navigator.geolocation.watchPosition(
       position => {
@@ -63,15 +98,6 @@ export class CrimeMapComponent {
           if (!this.userMarkerElement) {
             // First time: create the marker
             const customDiv = document.createElement('div');
-            customDiv.innerHTML = `
-              <div style="
-                width: 20px;
-                height: 20px;
-                background-color: #3b82f6;
-                border-radius: 50%;
-                box-shadow: 0 0 8px rgba(0,0,0,0.3);
-              "></div>
-            `;
 
             this.userMarkerElement = new AdvancedMarkerElement({
               map: this.mapInstance,
