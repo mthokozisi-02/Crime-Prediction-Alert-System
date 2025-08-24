@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pA6wnnA090fCKAb99u0IzoVjYAvRW1KjgDcBGOgFBlE=",
+  "Source": "CrimePredictionAlertSystem.Api",
+  "BasePath": "_content/CrimePredictionAlertSystem.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

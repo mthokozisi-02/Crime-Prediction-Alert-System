@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { HomeComponent } from './pages/home/home.component';
@@ -18,8 +18,17 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 })
 export class AppComponent implements OnInit {
   title = 'CrimePredictionAlertSystem.Frontend';
+  
+  audio = new Audio('assets/sounds/beep.mp3');
 
   ngOnInit(): void {
-        initFlowbite();
-      }
+    initFlowbite();
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.audio.play()
+    }
+  }
 }

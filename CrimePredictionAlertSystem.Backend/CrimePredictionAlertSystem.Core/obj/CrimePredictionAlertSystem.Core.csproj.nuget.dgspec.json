@@ -1,0 +1,146 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\CrimePredictionAlertSystem.Core.csproj": {}
+  },
+  "projects": {
+    "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\CrimePredictionAlertSystem.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\CrimePredictionAlertSystem.Core.csproj",
+        "projectName": "CrimePredictionAlertSystem.Core",
+        "projectPath": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\CrimePredictionAlertSystem.Core.csproj",
+        "packagesPath": "C:\\Users\\mthok\\.nuget\\packages\\",
+        "outputPath": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mthok\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Data\\CrimePredictionAlertSystem.Data.csproj": {
+                "projectPath": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Data\\CrimePredictionAlertSystem.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AfricasTalking.NET": {
+              "target": "Package",
+              "version": "[1.2.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Data\\CrimePredictionAlertSystem.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Data\\CrimePredictionAlertSystem.Data.csproj",
+        "projectName": "CrimePredictionAlertSystem.Data",
+        "projectPath": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Data\\CrimePredictionAlertSystem.Data.csproj",
+        "packagesPath": "C:\\Users\\mthok\\.nuget\\packages\\",
+        "outputPath": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mthok\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

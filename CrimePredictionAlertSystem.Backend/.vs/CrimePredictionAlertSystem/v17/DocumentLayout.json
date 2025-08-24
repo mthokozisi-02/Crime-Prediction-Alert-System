@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}|CrimePredictionAlertSystem.Core\\CrimePredictionAlertSystem.Core.csproj|c:\\_source\\crime-prediction-alert-system\\crimepredictionalertsystem.backend\\crimepredictionalertsystem.core\\services\\smsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}|CrimePredictionAlertSystem.Core\\CrimePredictionAlertSystem.Core.csproj|solutionrelative:crimepredictionalertsystem.core\\services\\smsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06D6665A-5B3F-4894-826C-4692709B285E}|CrimePredictionAlertSystem.Api\\CrimePredictionAlertSystem.Api.csproj|c:\\_source\\crime-prediction-alert-system\\crimepredictionalertsystem.backend\\crimepredictionalertsystem.api\\controllers\\sms\u0027controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D6665A-5B3F-4894-826C-4692709B285E}|CrimePredictionAlertSystem.Api\\CrimePredictionAlertSystem.Api.csproj|solutionrelative:crimepredictionalertsystem.api\\controllers\\sms\u0027controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}|CrimePredictionAlertSystem.Core\\CrimePredictionAlertSystem.Core.csproj|c:\\_source\\crime-prediction-alert-system\\crimepredictionalertsystem.backend\\crimepredictionalertsystem.core\\dto\\smsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}|CrimePredictionAlertSystem.Core\\CrimePredictionAlertSystem.Core.csproj|solutionrelative:crimepredictionalertsystem.core\\dto\\smsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06D6665A-5B3F-4894-826C-4692709B285E}|CrimePredictionAlertSystem.Api\\CrimePredictionAlertSystem.Api.csproj|c:\\_source\\crime-prediction-alert-system\\crimepredictionalertsystem.backend\\crimepredictionalertsystem.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D6665A-5B3F-4894-826C-4692709B285E}|CrimePredictionAlertSystem.Api\\CrimePredictionAlertSystem.Api.csproj|solutionrelative:crimepredictionalertsystem.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 227,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SmsRequest.cs",
+              "DocumentMoniker": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\Dto\\SmsRequest.cs",
+              "RelativeDocumentMoniker": "CrimePredictionAlertSystem.Core\\Dto\\SmsRequest.cs",
+              "ToolTip": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\Dto\\SmsRequest.cs",
+              "RelativeToolTip": "CrimePredictionAlertSystem.Core\\Dto\\SmsRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T17:07:04.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Api\\Program.cs",
+              "RelativeDocumentMoniker": "CrimePredictionAlertSystem.Api\\Program.cs",
+              "ToolTip": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Api\\Program.cs",
+              "RelativeToolTip": "CrimePredictionAlertSystem.Api\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T16:04:06.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Sms\u0027Controller.cs",
+              "DocumentMoniker": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Api\\Controllers\\Sms\u0027Controller.cs",
+              "RelativeDocumentMoniker": "CrimePredictionAlertSystem.Api\\Controllers\\Sms\u0027Controller.cs",
+              "ToolTip": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Api\\Controllers\\Sms\u0027Controller.cs",
+              "RelativeToolTip": "CrimePredictionAlertSystem.Api\\Controllers\\Sms\u0027Controller.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAYwBwAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T15:54:43.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SmsService.cs",
+              "DocumentMoniker": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\Services\\SmsService.cs",
+              "RelativeDocumentMoniker": "CrimePredictionAlertSystem.Core\\Services\\SmsService.cs",
+              "ToolTip": "C:\\_source\\Crime-Prediction-Alert-System\\CrimePredictionAlertSystem.Backend\\CrimePredictionAlertSystem.Core\\Services\\SmsService.cs",
+              "RelativeToolTip": "CrimePredictionAlertSystem.Core\\Services\\SmsService.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAIwBcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T15:36:08.108Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 74,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

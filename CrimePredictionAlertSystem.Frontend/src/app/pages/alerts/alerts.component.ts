@@ -19,12 +19,26 @@ export class AlertsComponent {
     
     ngOnInit(): void {
         this.sub = this.alertService.alerts$.subscribe((alerts) => {
-        this.crimeAlerts = alerts;
-        console.log('Updated Alerts:', alerts);
+        this.crimeAlerts = alerts.slice(-5);
+        this.crimeAlerts.forEach(async alert => {
+            alert.address = await this.reverseGeocode(alert.lat, alert.lng);
         });
+        });
+    }
+
+    private async reverseGeocode(lat: number, lng: number): Promise<string> {
+        const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);
+        const data = await response.json();
+        return data.display_name || 'Unknown location';
     }
 
     ngOnDestroy(): void {
         this.sub?.unsubscribe();
     }
+
+    removeAlert(timestamp: string) {
+        this.alertService.removeAlert(timestamp);
+    }
+
+    
 }

@@ -24,6 +24,8 @@ L.Icon.Default.mergeOptions({
 export class CrimeMapComponent implements AfterViewInit, OnDestroy {
   alerts: CrimeAlert[] = [];
 
+  active: any;
+
   private map!: L.Map;
   private heatLayer!: L.Layer;
   private watchId: number | null = null;
@@ -98,7 +100,9 @@ export class CrimeMapComponent implements AfterViewInit, OnDestroy {
     );
   }
 
-  private handleUserPosition(lat: number, lng: number): void {
+  private async handleUserPosition(lat: number, lng: number): Promise<void> {
+    const address = await this.reverseGeocode(lat, lng)
+    console.log('moving to:', address);
     // Remove previous user markers if needed - optional improvement
     // Could keep a reference to the marker and update position instead of adding new marker every time
 
@@ -126,7 +130,7 @@ export class CrimeMapComponent implements AfterViewInit, OnDestroy {
   private triggerAlert(lat: number, lng: number): void {
     // Save alert locally and via service
     this.alertService.addAlert({ lat, lng, timestamp: new Date().toISOString() });
-    this.storeCrimeAlert(lat, lng);
+    this.ScrollIntoView('#safety-tips')
 
     const audio = new Audio('assets/sounds/beep.mp3');
     if (document.readyState === 'complete') {
@@ -163,18 +167,37 @@ export class CrimeMapComponent implements AfterViewInit, OnDestroy {
     return deg * (Math.PI / 180);
   }
 
-  private storeCrimeAlert(lat: number, lng: number): void {
-    const alerts: CrimeAlert[] = JSON.parse(localStorage.getItem('crimeAlerts') ?? '[]');
-
-    alerts.push({ lat, lng, timestamp: new Date().toISOString() });
-    const latestAlerts = alerts.slice(-10); // Keep latest 10 alerts
-
-    localStorage.setItem('crimeAlerts', JSON.stringify(latestAlerts));
-  }
 
   ngOnDestroy(): void {
     if (this.watchId !== null) {
       navigator.geolocation.clearWatch(this.watchId);
     }
   }
+
+  windowScroll() {
+    const navbar = document.getElementById("navbar");
+    if (navbar != null) {
+      if (
+        document.body.scrollTop >= 50 ||
+        document.documentElement.scrollTop >= 50
+      ) {
+        navbar.classList.add("is-sticky");
+      } else {
+        navbar.classList.remove("is-sticky");
+      }
+    }
+  }
+
+  ScrollIntoView(elem: string) {
+    this.active = elem;
+    let ele = document.querySelector(elem) as any;
+    ele.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  private async reverseGeocode(lat: number, lng: number): Promise<string> {
+    const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);
+    const data = await response.json();
+    return data.display_name || 'Unknown location';
+  }
+
 }

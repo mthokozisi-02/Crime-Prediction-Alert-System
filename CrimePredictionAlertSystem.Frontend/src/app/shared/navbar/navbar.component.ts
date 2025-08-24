@@ -1,16 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AlertService } from '../../../services/alert.service';
+import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-navbar',
     standalone: true,
-    imports: [],
+    imports: [AsyncPipe],
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+
+  count$!: Observable<number>;
 
   active: any = '#home';
 
+  constructor(private alertService: AlertService) {}
+
+  ngOnInit() {
+    this.count$ = this.alertService.alertsCount();
+  }
   
 windowScroll() {
     const navbar = document.getElementById("navbar");

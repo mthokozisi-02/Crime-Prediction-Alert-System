@@ -1,0 +1,12 @@
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\bin\Debug\net8.0\CrimePredictionAlertSystem.Data.deps.json
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\bin\Debug\net8.0\CrimePredictionAlertSystem.Data.dll
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\bin\Debug\net8.0\CrimePredictionAlertSystem.Data.pdb
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\CrimePredictionAlertSystem.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\CrimePredictionAlertSystem.Data.AssemblyInfoInputs.cache
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\CrimePredictionAlertSystem.Data.AssemblyInfo.cs
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\CrimePredictionAlertSystem.Data.csproj.CoreCompileInputs.cache
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\CrimePredictionAlertSystem.Data.sourcelink.json
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\CrimePredictionAlertSystem.Data.dll
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\refint\CrimePredictionAlertSystem.Data.dll
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\CrimePredictionAlertSystem.Data.pdb
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Data\obj\Debug\net8.0\ref\CrimePredictionAlertSystem.Data.dll

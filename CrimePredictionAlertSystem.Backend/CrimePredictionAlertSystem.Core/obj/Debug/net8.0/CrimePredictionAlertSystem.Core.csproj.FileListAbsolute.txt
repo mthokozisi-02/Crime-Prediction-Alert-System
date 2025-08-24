@@ -1,0 +1,16 @@
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\bin\Debug\net8.0\CrimePredictionAlertSystem.Core.deps.json
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\bin\Debug\net8.0\CrimePredictionAlertSystem.Core.dll
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\bin\Debug\net8.0\CrimePredictionAlertSystem.Core.pdb
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\bin\Debug\net8.0\CrimePredictionAlertSystem.Data.dll
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\bin\Debug\net8.0\CrimePredictionAlertSystem.Data.pdb
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePredictionAlertSystem.Core.csproj.AssemblyReference.cache
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePredictionAlertSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePredictionAlertSystem.Core.AssemblyInfoInputs.cache
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePredictionAlertSystem.Core.AssemblyInfo.cs
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePredictionAlertSystem.Core.csproj.CoreCompileInputs.cache
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePredictionAlertSystem.Core.sourcelink.json
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePre.7DA21C05.Up2Date
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePredictionAlertSystem.Core.dll
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\refint\CrimePredictionAlertSystem.Core.dll
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\CrimePredictionAlertSystem.Core.pdb
+C:\_source\Crime-Prediction-Alert-System\CrimePredictionAlertSystem.Backend\CrimePredictionAlertSystem.Core\obj\Debug\net8.0\ref\CrimePredictionAlertSystem.Core.dll

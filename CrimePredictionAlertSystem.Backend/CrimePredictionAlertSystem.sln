@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimePredictionAlertSystem.Api", "CrimePredictionAlertSystem.Api\CrimePredictionAlertSystem.Api.csproj", "{06D6665A-5B3F-4894-826C-4692709B285E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimePredictionAlertSystem.Core", "CrimePredictionAlertSystem.Core\CrimePredictionAlertSystem.Core.csproj", "{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimePredictionAlertSystem.Data", "CrimePredictionAlertSystem.Data\CrimePredictionAlertSystem.Data.csproj", "{D7FB96C9-7218-4FE4-ABC3-0753828D6565}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06D6665A-5B3F-4894-826C-4692709B285E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D6665A-5B3F-4894-826C-4692709B285E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D6665A-5B3F-4894-826C-4692709B285E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D6665A-5B3F-4894-826C-4692709B285E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CC2BFB-2A1D-44E5-A551-D3D2107D7FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7FB96C9-7218-4FE4-ABC3-0753828D6565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7FB96C9-7218-4FE4-ABC3-0753828D6565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7FB96C9-7218-4FE4-ABC3-0753828D6565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7FB96C9-7218-4FE4-ABC3-0753828D6565}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
